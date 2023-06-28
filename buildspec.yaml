@@ -1,0 +1,31 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      php: 8.2
+      nodejs: 18
+    commands:
+      - composer install --ignore-platform-req=ext-sodium
+      - npm ci
+  build:
+    commands:
+      - npm run build
+artifacts:
+  files:
+    - vite.config.js
+    - .platform/**/*
+    - .ebextensions/**/*
+    - app/**/*
+    - artisan
+    - bootstrap/**/*
+    - composer.json
+    - composer.lock
+    - config/**/*
+    - database/**/*
+    - package-lock.json
+    - package.json
+    - public/**/*
+    - resources/**/*
+    - routes/*
+    - storage/**/*
