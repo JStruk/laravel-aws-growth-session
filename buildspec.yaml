@@ -6,7 +6,6 @@ phases:
       php: 8.2
       nodejs: 18
     commands:
-      - composer install --ignore-platform-req=ext-sodium
       - npm ci
   build:
     commands:
